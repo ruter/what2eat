@@ -13,31 +13,41 @@
                   :show-counter="true" :autosize="true" :rows="8"
                   placeholder="请留下您的宝贵意见..."></x-textarea>
     </group>
+    <x-button type="primary" :show-loading="isSubmit" action-type="button" @click.native="handleSubmitFeed">提交</x-button>
   </div>
 </template>
 
 <script>
-  import { Divider, Group, XInput, XTextarea } from 'vux';
+  import { Divider, Group, XButton, XInput, XTextarea } from 'vux';
 
   export default {
     name: 'Feed',
     components: {
       Divider,
       Group,
+      XButton,
       XInput,
       XTextarea,
     },
     data() {
       return {
-//        name: '',
         email: '',
         content: '',
+        isSubmit: false,
       };
+    },
+    methods: {
+      handleSubmitFeed() {
+        this.isSubmit = true;
+      },
     },
   };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+button {
+  width: 88% !important;
+  margin-top: 8px;
+}
 </style>
