@@ -7,8 +7,4 @@ const appKey = 'z6vnGRmnetkEXnDgDqhbttVF';
 AV.init({ appId, appKey });
 
 
-export default {
-  install(Vue, options) {
-    Vue.prototype.AV = AV;
-  }
-}
+export default AV;

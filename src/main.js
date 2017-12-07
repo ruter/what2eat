@@ -3,11 +3,9 @@
 import Vue from 'vue';
 import FastClick from 'fastclick';
 import App from './App';
+import store from './store';
 import router from './router';
-import leancloud from './utils/leancloud';
 
-
-Vue.use(leancloud);
 
 FastClick.attach(document.body);
 
@@ -20,6 +18,7 @@ router.beforeEach((to, from, next) => {
 
 /* eslint-disable no-new */
 new Vue({
+  store,
   router,
   render: h => h(App),
 }).$mount('#app-box');

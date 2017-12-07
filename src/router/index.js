@@ -30,5 +30,13 @@ export default new Router({
       },
       component: (resolve) => require(['@/components/Donate'], resolve)
     },
+    {
+      path: '/eat/:cuisine?',
+      name: 'Eat',
+      meta: {
+        title: '吃什么'
+      },
+      component: (resolve) => require(['@/components/Eat'], resolve)
+    }
   ],
 });
