@@ -13,7 +13,12 @@ Vue.config.productionTip = false;
 
 router.beforeEach((to, from, next) => {
   document.title = to.meta.title;
+  store.commit('updateLoadingStatus', { isLoading: true });
   next();
+});
+
+router.afterEach(() => {
+  store.commit('updateLoadingStatus', { isLoading: false });
 });
 
 /* eslint-disable no-new */

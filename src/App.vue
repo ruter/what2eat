@@ -27,7 +27,8 @@
 </template>
 
 <script>
-  import { Tabbar, TabbarItem, ViewBox } from 'vux';
+  import { Tabbar, TabbarItem, ViewBox, Loading } from 'vux';
+  import { mapState } from 'vuex';
 
   export default {
     name: 'app',
@@ -35,6 +36,12 @@
       Tabbar,
       TabbarItem,
       ViewBox,
+      Loading,
+    },
+    computed: {
+      ...mapState({
+        isLoading: state => state.isLoading,
+      }),
     },
   };
 </script>
