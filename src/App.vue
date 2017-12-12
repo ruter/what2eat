@@ -22,6 +22,7 @@
           <span slot="label">赏一杯</span>
         </tabbar-item>
       </tabbar>
+      <loading v-model="isLoading"></loading>
     </view-box>
   </div>
 </template>
